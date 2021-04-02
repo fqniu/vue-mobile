@@ -11,7 +11,11 @@ npm run dev
 npm run build
 
 ```
+# gitee 地址
+``` bash
+https://gitee.com/fqniu/vue-mobile.git
 
+```
 # Folder structure
 * build - webpack config files
 * config - webpack config files
