@@ -1,8 +1,8 @@
 <template>
   <div class="login-body">
     <img :src="logoUrl" alt="" class="login-logo">
-    <input class="com-input" type="text" v-model="account" placeholder="请输入手机号" @keyup.enter="loginFun()" style="margin-top: 1.3rem"/>
-    <input class="com-input" type="password" v-model="password" placeholder="请输入验证码" @keyup.enter="loginFun()"/>
+    <input class="com-input" type="text" v-model="account" placeholder="请输入邮箱" @keyup.enter="loginFun()" style="margin-top: 1.3rem"/>
+    <input class="com-input" type="password" v-model="password" placeholder="请输入密码" @keyup.enter="loginFun()"/>
     <span @click="getCode()" class="get-code">获取验证码</span>
     <div class="form-group" style="margin-top: 0.8rem">
       <button @click="loginFun()" class="button-login click" :class="{ disabled: loadState == 'loading' }" :disabled="loadState == 'loading'">
@@ -43,7 +43,7 @@ export default {
     async getCode() {
       if (!this.account) {
         this.$toast({
-          message: "请输入手机号",
+          message: "请输入邮箱",
           position: "bottom",
           duration: 1000,
         });
@@ -59,7 +59,7 @@ export default {
     async loginFun() {
       if (!this.account) {
         this.$toast({
-          message: "请输入手机号",
+          message: "请输入邮箱",
           position: "bottom",
           duration: 1000,
         });
@@ -67,16 +67,15 @@ export default {
       }
       if (!this.password) {
         this.$toast({
-          message: "请输入验证码",
+          message: "请输入密码",
           position: "bottom",
           duration: 1000,
         });
         return false;
       }
       let data = {
-        mobileno: this.account,
-        verifyCode: this.password,
-        flag: "login",
+        email: this.account,
+        password: this.password,
       };
       let auto = true;
       let res = await login(data);

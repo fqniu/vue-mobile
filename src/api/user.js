@@ -1,4 +1,5 @@
 import request from '@/service/index'
+import postJson from '@/service/postJson'
 import { getToken } from '@/utils/util'
 
 /**
@@ -19,8 +20,8 @@ import { getToken } from '@/utils/util'
  * @param code
  */
  export const login = (data) => {
-  return request({
-    url: 'web/login/mobileno',
+  return postJson({
+    url: '/api/users/login',
     data,
     method: 'post'
   })

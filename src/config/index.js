@@ -8,7 +8,8 @@ export default {
    * @description api请求基础路径
    */
   baseUrl: {
-    dev:'http://test.xxxxxx.com',
+    // dev:'http://www.fqniu.xyz:5000',
+    dev:'http://localhost:5000',
     pro:'http://test.xxxxxx.com',
   },
   projectName:'xxxpro',
